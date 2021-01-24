@@ -15,13 +15,18 @@ public class Hole : MonoBehaviour
 
     void Start()
     {
+        animations = 0;
         game = FindObjectOfType<Game>();
         AutoSetId();
         if (!(this is BigHole))
             for(int i = 0; i < startStonesAmount; i++)
             {
                 Stone stone = Instantiate(game.stonePrefab, new Vector3(), Quaternion.identity, transform);
-                stone.transform.localPosition = new Vector3(Random.Range(-3f, 0f), Random.Range(2.5f, -2.5f), -25f);
+                int rnd = Random.Range(0, 2);
+                if(rnd == 0)
+                    stone.transform.localPosition = new Vector3(Random.Range(-2.8f, -0.4f), Random.Range(-2.6f, 2.7f), -25f);
+                else stone.transform.localPosition = new Vector3(Random.Range(-2f, 2f), Random.Range(0.3f, 2.4f), -25f);
+
                 stones.Add(stone);
             }
         
@@ -30,13 +35,13 @@ public class Hole : MonoBehaviour
     void Update()
     {
         if (GetStonesAmount() == 0)
-            scoreText.text = "";
+            scoreText.text = "0";
         else scoreText.text = GetStonesAmount().ToString();
     }
 
     void OnMouseDown()
     {
-        if(GetStonesAmount() > 0 && !(this is BigHole) && animations == 0 && IsMyHole())
+        if(GetStonesAmount() > 0 && !(this is BigHole) && animations == 0 && IsMyHole() && !IsInvoking("RepeatCase"))
             game.Turn(id);
     }
 
@@ -62,7 +67,15 @@ public class Hole : MonoBehaviour
     void Animate()
     {
         stonesToAdd[0].transform.parent = transform;
-        stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-3f, 0f), Random.Range(2.5f, -2.5f), -25f);
+        if (this is BigHole)
+            stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-3f, 3f), Random.Range(6f, -6f), -25f);
+        else
+        {
+            int rnd = Random.Range(0, 2);
+            if (rnd == 0)
+                stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-2.8f, -0.4f), Random.Range(-2.6f, 2.7f), -25f);
+            else stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-2f, 2f), Random.Range(0.3f, 2.4f), -25f);
+        }
         stonesToAdd.Remove(stonesToAdd[0]);
         animations--;
     }

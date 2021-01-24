@@ -1661,8 +1661,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -265.01, y: 108.1}
-  m_SizeDelta: {x: 170.61, y: 29}
+  m_AnchoredPosition: {x: -251.65, y: 108.1}
+  m_SizeDelta: {x: 197.31, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852026639
 MonoBehaviour:
@@ -1695,7 +1695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Rurn: P2'
+  m_Text: 'Turn: P2'
 --- !u!222 &852026640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3574,6 +3574,7 @@ MonoBehaviour:
   - {fileID: 1616262060}
   - {fileID: 852026639}
   p1Turn: 1
+  over: 0
 --- !u!4 &1910645056
 Transform:
   m_ObjectHideFlags: 0

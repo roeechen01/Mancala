@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -18,8 +19,17 @@ public class Game : MonoBehaviour
 
     }
 
+    void CheckKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+        if (Input.GetKeyDown(KeyCode.Space))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     void Update()
     {
+        CheckKeys();
         if (!over)
         {
             if (Hole.animations == 0)
@@ -165,7 +175,7 @@ public class Game : MonoBehaviour
             for (int i = 0; i < stonesToHandle.Length; i++)
                 holes[dest].AddStone(stonesToHandle[i], i + 1);
 
-
+            CheckGameOver();
         }
     }
 
