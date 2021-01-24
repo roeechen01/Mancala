@@ -15,9 +15,4 @@ public class Stone : MonoBehaviour
         spriteRenderer.sprite = sprites[Random.Range(0, 8)];
 
     }
-
-    void Update()
-    {
-        
-    }
 }

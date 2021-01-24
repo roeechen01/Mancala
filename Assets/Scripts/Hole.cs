@@ -7,8 +7,7 @@ public class Hole : MonoBehaviour
 {
     Game game;
     public Text scoreText;
-    private int startStonesAmount = 4;
-    //protected int stonesAmount;
+    private int startStonesAmount = 2;
     protected int id;
     public List<Stone> stones = new List<Stone>();
     float delay = 0.2f;
@@ -37,8 +36,13 @@ public class Hole : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(GetStonesAmount() > 0 && !(this is BigHole) && animations == 0)
+        if(GetStonesAmount() > 0 && !(this is BigHole) && animations == 0 && IsMyHole())
             game.Turn(id);
+    }
+
+    bool IsMyHole()
+    {
+        return (game.p1Turn && id < 6) || (!game.p1Turn && id > 6);
     }
 
     public int GetStonesAmount()
@@ -46,20 +50,20 @@ public class Hole : MonoBehaviour
         return this.stones.Count;
     }
 
-    Stone stone;
+    List<Stone> stonesToAdd = new List<Stone>();
     public void AddStone(Stone stone, int index)
     {
-        this.stone = stone;
-        animations++;
-        Debug.Log("New animation + " + animations);
-        Invoke("Animate", delay * index);
         stones.Add(stone);
+        stonesToAdd.Add(stone);
+        animations++;
+        Invoke("Animate", delay * index);
     }
 
     void Animate()
     {
-        stone.transform.parent = transform;
-        stone.transform.localPosition = new Vector3(Random.Range(-3f, 0f), Random.Range(2.5f, -2.5f), -25f);
+        stonesToAdd[0].transform.parent = transform;
+        stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-3f, 0f), Random.Range(2.5f, -2.5f), -25f);
+        stonesToAdd.Remove(stonesToAdd[0]);
         animations--;
     }
 
