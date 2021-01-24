@@ -10,7 +10,9 @@ public class Hole : MonoBehaviour
     private int startStonesAmount = 4;
     //protected int stonesAmount;
     protected int id;
-    protected List<Stone> stones = new List<Stone>();
+    public List<Stone> stones = new List<Stone>();
+    float delay = 0.2f;
+
     void Start()
     {
         game = FindObjectOfType<Game>();
@@ -32,9 +34,29 @@ public class Hole : MonoBehaviour
         else scoreText.text = GetStonesAmount().ToString();
     }
 
+    void OnMouseDown()
+    {
+        if(GetStonesAmount() > 0 && !(this is BigHole))
+            game.Turn(id);
+    }
+
     public int GetStonesAmount()
     {
         return this.stones.Count;
+    }
+
+    Stone stone;
+    public void AddStone(Stone stone, int index)
+    {
+        this.stone = stone;
+        Invoke("Animate", delay * index);
+        stones.Add(stone);
+    }
+
+    void Animate()
+    {
+        stone.transform.parent = transform;
+        stone.transform.localPosition = new Vector3(Random.Range(-3f, 0f), Random.Range(2.5f, -2.5f), -25f);
     }
 
     void AutoSetId()

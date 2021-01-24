@@ -17,4 +17,17 @@ public class Game : MonoBehaviour
     {
         
     }
+
+    public void Turn(int holeID)
+    {
+        Stone[] holeStones = holes[holeID].stones.ToArray();
+        holes[holeID].stones.Clear();
+        int pos = holeID + 1;
+        for (int i = holeStones.Length; i > 0; i--)
+        {
+            if (pos == 14)
+                pos = 0;
+            holes[pos++].AddStone(holeStones[holeStones.Length - i], holeStones.Length - i + 1);
+        }
+    }
 }

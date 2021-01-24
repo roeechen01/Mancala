@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 624896947}
+  stones: []
 --- !u!61 &34628290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -303,7 +304,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -415,6 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1209695048}
+  stones: []
 --- !u!61 &191466685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -503,7 +505,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -615,6 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 481599905}
+  stones: []
 --- !u!61 &231256151
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -816,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 42088622}
+  stones: []
 --- !u!61 &325052437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -904,7 +908,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -983,7 +987,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1225,7 +1229,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1304,7 +1308,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1484,7 +1488,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1596,6 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 893351085}
+  stones: []
 --- !u!61 &769011918
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1633,8 +1638,6 @@ GameObject:
   - component: {fileID: 852026637}
   - component: {fileID: 852026640}
   - component: {fileID: 852026639}
-  - component: {fileID: 852026638}
-  - component: {fileID: 852026641}
   m_Layer: 5
   m_Name: p2
   m_TagString: Untagged
@@ -1661,18 +1664,6 @@ RectTransform:
   m_AnchoredPosition: {x: -265.01, y: 108.1}
   m_SizeDelta: {x: 170.61, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &852026638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852026636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac042a3516c482488d2c40f289cf313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &852026639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1713,18 +1704,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852026636}
   m_CullTransparentMesh: 0
---- !u!114 &852026641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852026636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3bdd090d9029514f818d651d6f94609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &893351082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,7 +1766,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1899,6 +1878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 213259498}
+  stones: []
 --- !u!61 &931750728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2020,6 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1319081129}
+  stones: []
 --- !u!61 &966966349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2141,6 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 534310117}
+  stones: []
 --- !u!61 &970201145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2229,7 +2211,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2341,6 +2323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1742883056}
+  stones: []
 --- !u!61 &981247394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2528,6 +2511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 376554144}
+  stones: []
 --- !u!61 &1046254146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2616,7 +2600,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2740,7 +2724,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2852,6 +2836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 661655331}
+  stones: []
 --- !u!61 &1587183523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2889,8 +2874,6 @@ GameObject:
   - component: {fileID: 1616262057}
   - component: {fileID: 1616262061}
   - component: {fileID: 1616262060}
-  - component: {fileID: 1616262059}
-  - component: {fileID: 1616262058}
   m_Layer: 5
   m_Name: p1
   m_TagString: Untagged
@@ -2917,30 +2900,6 @@ RectTransform:
   m_AnchoredPosition: {x: 275.5, y: -138.5}
   m_SizeDelta: {x: 153.9, y: 29.9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1616262058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616262056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3bdd090d9029514f818d651d6f94609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1616262059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616262056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac042a3516c482488d2c40f289cf313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1616262060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3045,7 +3004,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3206,6 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 977189033}
+  stones: []
 --- !u!61 &1820387460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3327,6 +3287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2077558860}
+  stones: []
 --- !u!61 &1843386921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3448,6 +3409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1885794109}
+  stones: []
 --- !u!61 &1866761425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3536,7 +3498,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3764,7 +3726,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
