@@ -12,6 +12,7 @@ public class Hole : MonoBehaviour
     protected int id;
     public List<Stone> stones = new List<Stone>();
     float delay = 0.2f;
+    public static int animations = 0;
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class Hole : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(GetStonesAmount() > 0 && !(this is BigHole))
+        if(GetStonesAmount() > 0 && !(this is BigHole) && animations == 0)
             game.Turn(id);
     }
 
@@ -49,6 +50,8 @@ public class Hole : MonoBehaviour
     public void AddStone(Stone stone, int index)
     {
         this.stone = stone;
+        animations++;
+        Debug.Log("New animation + " + animations);
         Invoke("Animate", delay * index);
         stones.Add(stone);
     }
@@ -57,6 +60,7 @@ public class Hole : MonoBehaviour
     {
         stone.transform.parent = transform;
         stone.transform.localPosition = new Vector3(Random.Range(-3f, 0f), Random.Range(2.5f, -2.5f), -25f);
+        animations--;
     }
 
     void AutoSetId()
