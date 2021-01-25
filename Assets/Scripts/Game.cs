@@ -63,7 +63,7 @@ public class Game : MonoBehaviour
             }
             else if (holes[6].GetStonesAmount() < holes[13].GetStonesAmount())
             {
-                indicators[1].text = "Winner: P2";
+                indicators[1].text = "Winner: Ai";
                 indicators[0].text = "";
             }
             else
@@ -72,6 +72,7 @@ public class Game : MonoBehaviour
                 indicators[0].text = "Tie";
             }
         }
+        CheckGameOver();
     }
 
     void AiTurn()
@@ -90,6 +91,10 @@ public class Game : MonoBehaviour
         {
             if (pos == 14)
                 pos = 0;
+            if (pos == 13 && p1Turn)
+                pos = 0;
+            if (pos == 6 && !p1Turn)
+                pos = 7;
             holes[pos++].AddStone(holeStones[holeStones.Length - i], holeStones.Length - i + 1);
             if (i == 1 && ((pos - 1 == 6 && p1Turn) || (pos - 1 == 13 && !p1Turn)))
             {

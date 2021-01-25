@@ -7,8 +7,9 @@ public class Hole : MonoBehaviour
 {
     Game game;
     public Text scoreText;
-    private int startStonesAmount = 1;
+    private int startStonesAmount = 3;
     protected int id;
+    public int stonesAmount = 0;//Made for Ai purpouses
     public List<Stone> stones = new List<Stone>();
     float delay = 0.2f;
     public static int animations = 0;
