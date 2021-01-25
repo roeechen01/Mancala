@@ -33,7 +33,7 @@ public class Game : MonoBehaviour
         CheckKeys();
         if (!over)
         {
-            if (Hole.animations == 0)
+            if (Hole.animations == 0 && !IsInvoking("RepeatCase"))
             {
                 if (p1Turn)
                 {
@@ -104,7 +104,7 @@ public class Game : MonoBehaviour
             if (i == 1 && holes[pos - 1].GetStonesAmount() == 1 && ((p1Turn && pos - 1 < 6) || (!p1Turn && pos - 1 > 6)))
             {
                 finalPos = pos - 1;
-                InvokeRepeating("RepeatCase", 0.2f, 0.2f);
+                InvokeRepeating("RepeatCase", 0.2f, 0.2f); 
             }
         }
         if (!extra)

@@ -23,11 +23,7 @@ public class Ai : MonoBehaviour
     void UpdateHoles()
     {
         for(int i = 0; i < 14; i++)
-        {
-            if (holes[i] == null)
-                print("NULL");
             holes[i].stonesAmount = game.holes[i].GetStonesAmount();
-        }
     }
 
     public void DoTurn()
@@ -102,9 +98,9 @@ public class Ai : MonoBehaviour
         }
         int extraValue = 2;
         int gained = holes[13].stonesAmount - basePoints;
-        print(firstPos + " " + (holes[13].stonesAmount - basePoints));
+        //print(firstPos + " " + (holes[13].stonesAmount - basePoints));
         if (extra)
-            gained += extraValue; ;
+            gained += extraValue;
         return gained;
     }
 

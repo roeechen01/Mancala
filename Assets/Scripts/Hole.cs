@@ -7,9 +7,8 @@ public class Hole : MonoBehaviour
 {
     Game game;
     public Text scoreText;
-    private int startStonesAmount = 3;
+    private int startStonesAmount = 4;
     protected int id;
-    public int stonesAmount = 0;//Made for Ai purpouses
     public List<Stone> stones = new List<Stone>();
     float delay = 0.2f;
     public static int animations = 0;
@@ -19,7 +18,7 @@ public class Hole : MonoBehaviour
         animations = 0;
         game = FindObjectOfType<Game>();
         AutoSetId();
-        if (!(this is BigHole))
+        if (!IsBigHole())
             for(int i = 0; i < startStonesAmount; i++)
             {
                 Stone stone = Instantiate(game.stonePrefab, new Vector3(), Quaternion.identity, transform);
@@ -42,7 +41,7 @@ public class Hole : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(!game.over && GetStonesAmount() > 0 && !(this is BigHole) && animations == 0 && IsMyHole() && !IsInvoking("RepeatCase"))
+        if(!game.over && GetStonesAmount() > 0 && !IsBigHole() && animations == 0 && IsMyHole() && !IsInvoking("RepeatCase"))
             game.Turn(id);
     }
 
@@ -68,8 +67,8 @@ public class Hole : MonoBehaviour
     void Animate()
     {
         stonesToAdd[0].transform.parent = transform;
-        if (this is BigHole)
-            stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-3f, 3f), Random.Range(6f, -6f), -25f);
+        if (IsBigHole())
+            stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-3f, 3f), Random.Range(-4.5f, 6f), -25f);
         else
         {
             int rnd = Random.Range(0, 2);
@@ -88,5 +87,10 @@ public class Hole : MonoBehaviour
             if (this == game.holes[i])
                 id = i;
         }
+    }
+
+    bool IsBigHole()
+    {
+        return id == 6 || id == 13;
     }
 }
