@@ -7,7 +7,7 @@ public class Hole : MonoBehaviour
 {
     Game game;
     public Text scoreText;
-    private int startStonesAmount = 2;
+    private int startStonesAmount = 1;
     protected int id;
     public List<Stone> stones = new List<Stone>();
     float delay = 0.2f;
@@ -41,13 +41,13 @@ public class Hole : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(GetStonesAmount() > 0 && !(this is BigHole) && animations == 0 && IsMyHole() && !IsInvoking("RepeatCase"))
+        if(!game.over && GetStonesAmount() > 0 && !(this is BigHole) && animations == 0 && IsMyHole() && !IsInvoking("RepeatCase"))
             game.Turn(id);
     }
 
     bool IsMyHole()
     {
-        return (game.p1Turn && id < 6) || (!game.p1Turn && id > 6);
+        return (game.p1Turn && id < 6)/* || (!game.p1Turn && id > 6)*/;//AI CHANGE
     }
 
     public int GetStonesAmount()

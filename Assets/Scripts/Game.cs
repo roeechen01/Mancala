@@ -10,13 +10,14 @@ public class Game : MonoBehaviour
     public Stone stonePrefab;
     public Hole[] holes;
     public Text[] indicators;
+    Ai ai;
 
     public bool p1Turn = true;
     public bool over = false;
 
     void Start()
     {
-
+        ai = FindObjectOfType<Ai>();
     }
 
     void CheckKeys()
@@ -41,8 +42,9 @@ public class Game : MonoBehaviour
                 }
                 else
                 {
-                    indicators[1].text = "Turn: P2";
+                    indicators[1].text = "Turn: Ai";
                     indicators[0].text = "";
+                    Invoke("AiTurn", 1f);//AI CHANGE
                 }
             }
             else
@@ -70,6 +72,12 @@ public class Game : MonoBehaviour
                 indicators[0].text = "Tie";
             }
         }
+    }
+
+    void AiTurn()
+    {
+        ai.DoTurn();
+        CancelInvoke("AiTurn");
     }
 
     public void Turn(int holeID)
