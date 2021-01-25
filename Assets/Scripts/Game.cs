@@ -12,12 +12,13 @@ public class Game : MonoBehaviour
     public Text[] indicators;
     Ai ai;
 
-    public bool p1Turn = true;
+    public bool p1Turn;
     public bool over = false;
 
     void Start()
     {
         ai = FindObjectOfType<Ai>();
+        p1Turn = true;
     }
 
     void CheckKeys()
