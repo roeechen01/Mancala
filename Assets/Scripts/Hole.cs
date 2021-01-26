@@ -47,7 +47,9 @@ public class Hole : MonoBehaviour
 
     bool IsMyHole()
     {
-        return (game.p1Turn && id < 6)/* || (!game.p1Turn && id > 6)*/;//AI CHANGE
+        if(game.aiPlaying)
+            return (game.p1Turn && id < 6);
+        else return (game.p1Turn && id < 6) || (!game.p1Turn && id > 6);
     }
 
     public int GetStonesAmount()

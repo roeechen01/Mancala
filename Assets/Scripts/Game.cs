@@ -10,15 +10,20 @@ public class Game : MonoBehaviour
     public Stone stonePrefab;
     public Hole[] holes;
     public Text[] indicators;
+    public bool aiPlaying = true;
     Ai ai;
 
     public bool p1Turn;
     public bool over = false;
+    string p1Name = "P1";
+    string p2Name = "P2";
 
     void Start()
     {
         ai = FindObjectOfType<Ai>();
         p1Turn = true;
+        if (aiPlaying)
+            p2Name = "Ai";
     }
 
     void CheckKeys()
@@ -38,14 +43,15 @@ public class Game : MonoBehaviour
             {
                 if (p1Turn)
                 {
-                    indicators[0].text = "Turn: P1";
+                    indicators[0].text = "Turn: " + p1Name;
                     indicators[1].text = "";
                 }
                 else
                 {
-                    indicators[1].text = "Turn: Ai";
+                    indicators[1].text = "Turn: " + p2Name;
                     indicators[0].text = "";
-                    Invoke("AiTurn", 1f);//AI CHANGE
+                    if(aiPlaying)
+                        Invoke("AiTurn", 1f);
                 }
             }
             else
@@ -59,12 +65,12 @@ public class Game : MonoBehaviour
         {
             if (holes[6].GetStonesAmount() > holes[13].GetStonesAmount())
             {
-                indicators[0].text = "Winner: P1";
+                indicators[0].text = "Winner: " + p1Name;
                 indicators[1].text = "";
             }
             else if (holes[6].GetStonesAmount() < holes[13].GetStonesAmount())
             {
-                indicators[1].text = "Winner: Ai";
+                indicators[1].text = "Winner: " + p2Name;
                 indicators[0].text = "";
             }
             else

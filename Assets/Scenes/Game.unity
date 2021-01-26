@@ -3745,6 +3745,7 @@ MonoBehaviour:
   indicators:
   - {fileID: 1616262060}
   - {fileID: 1110051349}
+  aiPlaying: 1
   p1Turn: 1
   over: 0
 --- !u!4 &1910645056
