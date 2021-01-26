@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     public Text[] indicators;
     public bool aiPlaying = true;
     public bool p1FirstTurn;
+    public bool randomFirstTurn;
     Ai ai;
 
     bool p1Turn;
@@ -26,6 +27,13 @@ public class Game : MonoBehaviour
         if (aiPlaying)
             p2Name = "Ai";
         p1Turn = p1FirstTurn;
+        if (randomFirstTurn)
+        {
+            int rnd = Random.Range(0, 2);
+            if (rnd == 0)
+                p1Turn = true;
+            else p1Turn = false;
+        }
     }
 
     public bool GetP1Turn()

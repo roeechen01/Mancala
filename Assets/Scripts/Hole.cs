@@ -69,8 +69,14 @@ public class Hole : MonoBehaviour
     void Animate()
     {
         stonesToAdd[0].transform.parent = transform;
+        Vector3 pos;
         if (IsBigHole())
+        {
             stonesToAdd[0].transform.localPosition = new Vector3(Random.Range(-3f, 3f), Random.Range(-4.5f, 6f), -25f);
+            pos = stonesToAdd[0].transform.position;
+            //print(pos.x + ", " + pos.y);
+        }
+            
         else
         {
             int rnd = Random.Range(0, 2);
