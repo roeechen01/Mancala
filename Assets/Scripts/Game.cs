@@ -11,10 +11,11 @@ public class Game : MonoBehaviour
     public Hole[] holes;
     public Text[] indicators;
     public bool aiPlaying = true;
+    public bool p1FirstTurn;
     Ai ai;
 
-    public bool p1Turn;
-    public bool over = false;
+    bool p1Turn;
+    bool over = false;
     string p1Name = "P1";
     string p2Name = "P2";
 
@@ -24,6 +25,17 @@ public class Game : MonoBehaviour
         p1Turn = true;
         if (aiPlaying)
             p2Name = "Ai";
+        p1Turn = p1FirstTurn;
+    }
+
+    public bool GetP1Turn()
+    {
+        return p1Turn;
+    }
+
+    public bool GetOver()
+    {
+        return over;
     }
 
     void CheckKeys()

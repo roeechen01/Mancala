@@ -41,15 +41,15 @@ public class Hole : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(!game.over && GetStonesAmount() > 0 && !IsBigHole() && animations == 0 && IsMyHole() && !IsInvoking("RepeatCase"))
+        if(!game.GetOver() && GetStonesAmount() > 0 && !IsBigHole() && animations == 0 && IsMyHole() && !IsInvoking("RepeatCase"))
             game.Turn(id);
     }
 
     bool IsMyHole()
     {
         if(game.aiPlaying)
-            return (game.p1Turn && id < 6);
-        else return (game.p1Turn && id < 6) || (!game.p1Turn && id > 6);
+            return (game.GetP1Turn() && id < 6);
+        else return (game.GetP1Turn() && id < 6) || (!game.GetP1Turn() && id > 6);
     }
 
     public int GetStonesAmount()

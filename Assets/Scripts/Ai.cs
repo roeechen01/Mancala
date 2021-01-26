@@ -29,7 +29,7 @@ public class Ai : MonoBehaviour
     public void DoTurn()
     {
         UpdateHoles();
-        if (!game.p1Turn && !game.over)
+        if (!game.GetP1Turn() && !game.GetOver())
         {
             /////////////////Needs to be because of a bug that when only one hole contains stones, the AI doesnt move (probably fixed)
             /*int counter = 0;

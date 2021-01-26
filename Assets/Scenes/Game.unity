@@ -3746,8 +3746,7 @@ MonoBehaviour:
   - {fileID: 1616262060}
   - {fileID: 1110051349}
   aiPlaying: 1
-  p1Turn: 1
-  over: 0
+  p1FirstTurn: 0
 --- !u!4 &1910645056
 Transform:
   m_ObjectHideFlags: 0
